@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +30,7 @@ Route::group(
     function () {
 
         Route::get('/', function () {
-            return view('dashboard');
+            return view('dash');
         })->middleware(['auth'])->name('dashboard');
 
         Route::resource('products', ProductController::class);
