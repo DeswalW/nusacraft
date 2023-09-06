@@ -3,13 +3,10 @@
     <!-- Brand Logo -->
     <a href="{{ route('dashboard') }}" class="brand-link">
         <!-- <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-        <!-- academic icon -->
-        <i class="fas fa-graduation-cap brand-image img-circle" style="opacity: .8; font-size: 25px;"></i>
+        <!-- tshirt icon -->
+        <i class="fas fa-tshirt brand-image img-circle" style="font-size: 25px; margin-top: 5px;"></i>
+        <!-- <i class="fas fa-graduation-cap brand-image img-circle" style="opacity: .8; font-size: 25px;"></i> -->
         <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
-        <!-- small badge -->
-        <span class="badge badge-success ml-2font-weight-light text-sm">
-            {{ str(auth()->user()->role_name)->title() }}
-        </span>
     </a>
 
     <!-- Sidebar -->

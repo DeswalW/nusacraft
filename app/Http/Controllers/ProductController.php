@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use ZipArchive;
 
 class ProductController extends Controller
 {
@@ -34,14 +35,25 @@ class ProductController extends Controller
             'name'        => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'image'       => 'required|image|max:1024',
-            'music'       => 'required|file|mimes:mp3|max:1024',
+            'music'       => 'required|file',
+            'marker'      => 'required|file|mimes:zip|max:1024',
+            'model'      => 'required|file',
         ]);
+
+        $marker = $request->file('marker')->store('markers-zip');
+        // unzip the file
+        $zip = new ZipArchive;
+        $zip->open(storage_path('app/' . $marker));
+        $zip->extractTo(storage_path('app/markers/' . str($request->name)->slug()));
+        $zip->close();
 
         $product = Product::create([
             'name'        => $request->name,
             'description' => $request->description,
             'image'       => $request->file('image')->store('images'),
             'music'       => $request->file('music')->store('music'),
+            'marker'      => 'markers/' . str($request->name)->slug(),
+            'model'      => $request->file('model')->store('models'),
         ]);
 
         return redirect()->route('products.index')->with('success', 'Product created successfully.');
@@ -72,14 +84,27 @@ class ProductController extends Controller
             'name'        => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'image'       => 'nullable|image|max:1024',
-            'music'       => 'nullable|file|mimes:mp3|max:1024',
+            'music'       => 'nullable|file|max:1024',
+            'marker'      => 'nullable|file|mimes:zip',
+            'model'      => 'nullable|file',
         ]);
+
+        if ($request->hasFile('marker')) {
+            $marker = $request->file('marker')->store('markers');
+            // unzip the file
+            $zip = new ZipArchive;
+            $zip->open(storage_path('app/' . $marker));
+            $zip->extractTo(storage_path('app/markers' . $marker));
+            $zip->close();
+        }
 
         $product->update([
             'name'        => $request->name,
             'description' => $request->description,
-            'image'       => $request->file('image')->store('images'),
-            'music'       => $request->file('music')->store('music'),
+            'image'       => $request->hasFile('image') ? $request->file('image')->store('images') : $product->image,
+            'music'       => $request->hasFile('music') ? $request->file('music')->store('music') : $product->music,
+            'marker'      => $request->hasFile('marker') ? $marker : $product->marker,
+            'model'      => $request->hasFile('model') ? $request->file('model')->store('models') : $product->model,
         ]);
 
         return redirect()->route('products.index')->with('success', 'Product updated successfully.');

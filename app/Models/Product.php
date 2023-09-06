@@ -17,6 +17,8 @@ class Product extends Model
         'description',
         'image',
         'music',
+        'marker',
+        'model',
     ];
 
     /**

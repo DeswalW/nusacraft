@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('description');
             $table->string('image');
             $table->string('music');
+            $table->string('marker');
+            $table->string('model');
             $table->timestamps();
         });
     }

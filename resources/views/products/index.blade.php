@@ -25,13 +25,16 @@
                                 @foreach ($products as $product)
                                 <tr>
                                     <td>{{ $product->id }}</td>
-                                    <td>{{ $product->name }}</td>
-                                    <td>{{ $product->description }}</td>
-                                    <td><img src="{{ $product->image }}" alt="{{ $product->name }}" class="img-thumbnail" width="100" height="100"></td>
+                                    <td><a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a></td>
+                                    <!-- words limit -->
+                                    <td>{{ str($product->description)->words(10) }}...</td>
+                                    <td><img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="img-thumbnail" width="100" height="100"></td>
                                     <td><audio controls>
-                                            <source src="{{ $product->music }}" type="audio/mpeg">
+                                            <source src="{{ asset('storage/' . $product->music) }}" type="audio/mpeg">
                                         </audio></td>
-                                    <td>{{ $product->created_at }}</td>
+                                    <!-- readable for human -->
+                                    <td>{{ $product->created_at->diffForHumans() }}</td>
+
                                 </tr>
                                 @endforeach
                             </tbody>

@@ -39,7 +39,39 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'markers' => [
+            'driver' => 'local',
+            'root' => storage_path('app/markers'),
+            'url' => env('APP_URL') . '/storage/markers',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'images' => [
+            'driver' => 'local',
+            'root' => storage_path('app/images'),
+            'url' => env('APP_URL') . '/storage/images',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'music' => [
+            'driver' => 'local',
+            'root' => storage_path('app/music'),
+            'url' => env('APP_URL') . '/storage/music',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'models' => [
+            'driver' => 'local',
+            'root' => storage_path('app/models'),
+            'url' => env('APP_URL') . '/storage/models',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -71,6 +103,11 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('storage/markers') => storage_path('app/markers'),
+        public_path('storage/images') => storage_path('app/images'),
+        public_path('storage/music') => storage_path('app/music'),
+        public_path('storage/models') => storage_path('app/models'),
+
     ],
 
 ];
