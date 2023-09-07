@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ARController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -15,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ARController::class, 'index'])->name('home');
+
+Route::get('/ar/{product:slug}', [ARController::class, 'show'])->name('ar.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
