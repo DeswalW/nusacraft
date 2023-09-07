@@ -41,18 +41,39 @@ class ProductController extends Controller
         ]);
 
         $marker = $request->file('marker')->store('markers-zip');
-        // unzip the file
+        // // unzip the file
+        // $zip = new ZipArchive;
+        // $zip->open(storage_path('app/' . $marker));
+        // $zip->extractTo(storage_path('app/markers/' . str($request->name)->slug()));
+        // // foreach the files and get the name of a file with format fset
+        // $files = [];
+
+        // $zip->close();
+
+        // unzip the file, and get the name of the file inside the zip that has the format fset
         $zip = new ZipArchive;
         $zip->open(storage_path('app/' . $marker));
+        $files = [];
+        for ($i = 0; $i < $zip->numFiles; $i++) {
+            $filename = $zip->getNameIndex($i);
+            if (str_ends_with($filename, '.fset')) {
+                $files[] = $filename;
+            }
+        }
         $zip->extractTo(storage_path('app/markers/' . str($request->name)->slug()));
         $zip->close();
+
+        // remove the file format
+        $files = array_map(function ($file) {
+            return str_replace('.fset', '', $file);
+        }, $files);
 
         $product = Product::create([
             'name'        => $request->name,
             'description' => $request->description,
             'image'       => $request->file('image')->store('images'),
             'music'       => $request->file('music')->store('music'),
-            'marker'      => 'markers/' . str($request->name)->slug(),
+            'marker'      => 'markers/' . str($request->name)->slug() . '/' . $files[0],
             'model'      => $request->file('model')->store('models'),
         ]);
 
@@ -91,11 +112,25 @@ class ProductController extends Controller
 
         if ($request->hasFile('marker')) {
             $marker = $request->file('marker')->store('markers');
-            // unzip the file
+            // unzip the file and get the name of the file inside the zip that has the format fset
             $zip = new ZipArchive;
             $zip->open(storage_path('app/' . $marker));
-            $zip->extractTo(storage_path('app/markers' . $marker));
+            $files = [];
+            for ($i = 0; $i < $zip->numFiles; $i++) {
+                $filename = $zip->getNameIndex($i);
+                if (str_ends_with($filename, '.fset')) {
+                    $files[] = $filename;
+                }
+            }
+            $zip->extractTo(storage_path('app/markers/' . str($request->name)->slug()));
             $zip->close();
+
+            // remove the file format
+            $files = array_map(function ($file) {
+                return str_replace('.fset', '', $file);
+            }, $files);
+
+            $marker = 'markers/' . str($request->name)->slug() . '/' . $files[0];
         }
 
         $product->update([
