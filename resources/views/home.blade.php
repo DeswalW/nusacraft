@@ -17,29 +17,36 @@
 </head>
 
 <body>
-    <header>
-        <div class="max-w-4xl mx-auto flex items-center justify-between py-8">
-            <a href="/">
-                <h1 class="text-4xl font-bold">
+    <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+        <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+            <div class="p-4 flex flex-row items-center justify-between">
+                <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
                     Proculture <span class="text-blue-600">AR</span>
-                </h1>
-            </a>
-            <nav class="flex items-center gap-2">
-                <a href="{{ route('home') }}" class="text-lg mx-4 hover:text-blue-600 duration-200">Home</a>
-                <a href="#" class="text-lg mx-4 hover:text-blue-600 duration-200">About</a>
-                <a href="#" class="text-lg mx-4 hover:text-blue-600 duration-200">Contact</a>
+                </a>
+                <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                        <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+                <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/">Home</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">About</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Contact</a>
+
             </nav>
         </div>
-    </header>
+    </div>
 
     <main class="max-w-4xl mx-auto">
         <div class="flex flex-col items-center justify-center py-8">
             <h2 class="text-2xl font-bold">Our Products</h2>
             <!-- product list -->
-            <div class="flex gap-4 mt-8 justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 justify-center">
                 @foreach ($products as $product)
                 <!-- with image -->
-                <a href="{{ route('ar.show', $product) }}" class="flex flex-col overflow-hidden rounded-lg hover:shadow-xl duration-200 shadow-lg group w-full md:w-1/3">
+                <a href="{{ route('ar.show', $product) }}" class="flex flex-col overflow-hidden rounded-lg hover:shadow-xl duration-200 shadow-lg group">
                     <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="h-64 w-full object-cover bg-gray-200 group-hover:bg-gray-300 duration-200">
                     <div class="bg-white p-4 flex flex-col gap-2">
                         <h3 class="text-xl font-bold">{{ $product->name }}</h3>
