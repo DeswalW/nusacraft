@@ -74,7 +74,7 @@ class ProductController extends Controller
             'image'       => $request->file('image')->store('images'),
             'music'       => $request->file('music')->store('music'),
             'marker'      => 'markers/' . str($request->name)->slug() . '/' . $files[0],
-            'model'      => $request->file('model')->store('models'),
+            'model'      => $request->file('model')->storeAs('models', $request->file('model')->getClientOriginalName())
         ]);
 
         return redirect()->route('products.index')->with('success', 'Product created successfully.');
@@ -139,7 +139,7 @@ class ProductController extends Controller
             'image'       => $request->hasFile('image') ? $request->file('image')->store('images') : $product->image,
             'music'       => $request->hasFile('music') ? $request->file('music')->store('music') : $product->music,
             'marker'      => $request->hasFile('marker') ? $marker : $product->marker,
-            'model'      => $request->hasFile('model') ? $request->file('model')->store('models') : $product->model,
+            'model'      => $request->hasFile('model') ? $request->file('model')->storeAs('models', $request->file('model')->getClientOriginalName()) : $product->model
         ]);
 
         return redirect()->route('products.index')->with('success', 'Product updated successfully.');

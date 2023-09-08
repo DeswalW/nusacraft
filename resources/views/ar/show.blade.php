@@ -24,6 +24,17 @@
         font-size: 1.25em;
         color: white;
     }
+
+    a-scene {
+        display: block;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
 </style>
 
 <body>
