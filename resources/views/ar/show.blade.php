@@ -25,12 +25,6 @@
         color: white;
     }
 
-    a-scene {
-        display: block;
-        height: 100vh;
-        width: 100vw;
-    }
-
     body {
         margin: 0;
         overflow: hidden;
@@ -42,12 +36,25 @@
         <div>Loading, please wait...</div>
     </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-        <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
-        <a-nft type="nft" url="{{ 'storage/' . $product->marker }}" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
+        <a-nft type="nft" url="{{ 'storage/' . $product->marker }}" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5" detectionMode="mono_and_matrix">
             <a-entity gltf-model="{{ '/storage/' . $product->model }}" scale="5 5 5" position="50 150 0" rotation="0 180 0"></a-entity>
         </a-nft>
         <a-entity camera></a-entity>
     </a-scene>
+
+    <script>
+        const scene = document.querySelector('#scene');
+        const markerIndicator = document.createElement('a-box');
+        markerIndicator.setAttribute('color', 'green');
+        markerIndicator.setAttribute('position', '0 0 -1');
+        markerIndicator.setAttribute('scale', '0.5 0.5 0.5');
+        markerIndicator.setAttribute('visible', 'false');
+        scene.appendChild(markerIndicator);
+
+        scene.addEventListener('arjs-nft-loaded', (ev) => {
+            markerIndicator.setAttribute('visible', 'true');
+        });
+    </script>
 </body>
 
 </html>
