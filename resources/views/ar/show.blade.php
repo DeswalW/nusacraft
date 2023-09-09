@@ -53,7 +53,7 @@
 
     <div id="marker-indicator"></div>
     <!-- back button -->
-    <a href="{{ route('home') }}" style="position: absolute; top: 10px; left: 10px; z-index: 9999; font-size: 1.5em; color: white; text-decoration: none;">&larr; Back</a>
+    <a href="{{ route('home') }}" style="position: absolute; top: 10px; left: 10px; z-index: 9999; font-size: 1.5em; color: white; text-decoration: none;">&larr;</a>
     <!-- product description show when the marker found -->
 
     <div class="arjs-loader">
