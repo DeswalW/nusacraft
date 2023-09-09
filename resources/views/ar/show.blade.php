@@ -50,7 +50,7 @@
     </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
         <a-nft type="nft" url="{{ 'storage/' . $product->marker }}" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5" emitevents="true" id="nft">
-            <a-entity gltf-model="{{ '/storage/' . $product->model }}" scale="7 7 7" position="150 300 -100" rotation="90 0 0" id="model"></a-entity>
+            <a-entity gltf-model="{{ '/storage/' . $product->model }}" scale="7 7 7" position="150 300 -100" rotation="270 0 0" id="model"></a-entity>
             <a-text value="{{ $product->description }}" position="0 -50 0" align="center" width="120" color="#000000"></a-text>
         </a-nft>
         <a-entity camera></a-entity>
