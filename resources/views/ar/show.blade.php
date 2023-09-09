@@ -29,9 +29,20 @@
         margin: 0;
         overflow: hidden;
     }
+
+    #marker-indicator {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: red;
+    }
 </style>
 
 <body>
+    <div id="marker-indicator"></div>
     <div class="arjs-loader">
         <div>Loading, please wait...</div>
     </div>
@@ -43,16 +54,23 @@
     </a-scene>
 
     <script>
-        const scene = document.querySelector('#scene');
-        const markerIndicator = document.createElement('a-box');
-        markerIndicator.setAttribute('color', 'green');
-        markerIndicator.setAttribute('position', '0 0 -1');
-        markerIndicator.setAttribute('scale', '0.5 0.5 0.5');
-        markerIndicator.setAttribute('visible', 'false');
-        scene.appendChild(markerIndicator);
+        const markerIndicator = document.querySelector('#marker-indicator');
 
+        const setMarkerIndicatorColor = (color) => {
+            markerIndicator.style.backgroundColor = color;
+        };
+
+        const scene = document.querySelector('a-scene');
         scene.addEventListener('arjs-nft-loaded', (ev) => {
-            markerIndicator.setAttribute('visible', 'true');
+            setMarkerIndicatorColor('blue');
+        });
+
+        scene.addEventListener('arjs-nft-found', (ev) => {
+            setMarkerIndicatorColor('green');
+        });
+
+        scene.addEventListener('arjs-nft-lost', (ev) => {
+            setMarkerIndicatorColor('red');
         });
     </script>
 </body>
