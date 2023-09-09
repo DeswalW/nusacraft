@@ -53,9 +53,9 @@
 
     <div id="marker-indicator"></div>
     <!-- back button -->
-    <a href="{{ route('home') }}" style="position: absolute; top: 10px; left: 10px; z-index: 9999; font-size: 2.5em; color: white; text-decoration: none;">&larr; Back</a>
+    <a href="{{ route('home') }}" style="position: absolute; top: 10px; left: 10px; z-index: 9999; font-size: 2em; color: white; text-decoration: none;">&larr; Back</a>
     <!-- product description show when the marker found -->
-    <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 9999; font-size: 2.5em; color: white; text-decoration: none; display: none;" id="description">
+    <div style="position: fixed; bottom: 10px; left: 10px; z-index: 9999; font-size: 1.5em; color: white; text-decoration: none; display: none;" id="description">
         {{ $product->description }}
     </div>
 
