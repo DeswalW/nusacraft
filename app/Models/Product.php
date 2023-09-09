@@ -19,6 +19,14 @@ class Product extends Model
         'music',
         'marker',
         'model',
+        'model_x',
+        'model_y',
+        'model_z',
+        'model_rotation_x',
+        'model_rotation_y',
+        'model_rotation_z',
+        'model_scale',
+
     ];
 
     /**
@@ -37,5 +45,20 @@ class Product extends Model
         static::creating(function (Product $product) {
             $product->slug = str($product->name)->slug();
         });
+    }
+
+    public function getPositionAttribute()
+    {
+        return "{$this->model_x} {$this->model_y} {$this->model_z}";
+    }
+
+    public function getRotationAttribute()
+    {
+        return "{$this->model_rotation_x} {$this->model_rotation_y} {$this->model_rotation_z}";
+    }
+
+    public function getScaleAttribute()
+    {
+        return "{$this->model_scale} {$this->model_scale} {$this->model_scale}";
     }
 }

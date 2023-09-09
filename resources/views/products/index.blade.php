@@ -10,6 +10,12 @@
                         <a href="{{ route('products.create') }}" class="btn btn-primary">Create Product</a>
                     </div>
                     <div class="card-body">
+                        <!-- success message -->
+                        @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                        </div>
+                        @endif
                         <table class="table table-bordered" id="products-table">
                             <thead>
                                 <tr>

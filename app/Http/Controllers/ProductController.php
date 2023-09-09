@@ -38,6 +38,14 @@ class ProductController extends Controller
             'music'       => 'required|file',
             'marker'      => 'required|file|mimes:zip',
             'model'      => 'required|file',
+            'model_x'      => 'required|integer',
+            'model_y'      => 'required|integer',
+            'model_z'      => 'required|integer',
+            'model_rotation_x'      => 'required|integer',
+            'model_rotation_y'      => 'required|integer',
+            'model_rotation_z'      => 'required|integer',
+            'model_scale'      => 'required|numeric',
+
         ]);
 
         $marker = $request->file('marker')->store('markers-zip');
@@ -74,7 +82,14 @@ class ProductController extends Controller
             'image'       => $request->file('image')->store('images'),
             'music'       => $request->file('music')->store('music'),
             'marker'      => 'markers/' . str($request->name)->slug() . '/' . $files[0],
-            'model'      => $request->file('model')->storeAs('models', $request->file('model')->getClientOriginalName())
+            'model'      => $request->file('model')->storeAs('models', $request->file('model')->getClientOriginalName()),
+            'model_x'      => $request->model_x,
+            'model_y'      => $request->model_y,
+            'model_z'      => $request->model_z,
+            'model_rotation_x'      => $request->model_rotation_x,
+            'model_rotation_y'      => $request->model_rotation_y,
+            'model_rotation_z'      => $request->model_rotation_z,
+            'model_scale'      => $request->model_scale,
         ]);
 
         return redirect()->route('products.index')->with('success', 'Product created successfully.');
@@ -108,6 +123,14 @@ class ProductController extends Controller
             'music'       => 'nullable|file',
             'marker'      => 'nullable|file|mimes:zip',
             'model'      => 'nullable|file',
+            'model_x'      => 'required|integer',
+            'model_y'      => 'required|integer',
+            'model_z'      => 'required|integer',
+            'model_rotation_x'      => 'required|integer',
+            'model_rotation_y'      => 'required|integer',
+            'model_rotation_z'      => 'required|integer',
+            'model_scale'      => 'required|numeric',
+
         ]);
 
         if ($request->hasFile('marker')) {
@@ -139,7 +162,15 @@ class ProductController extends Controller
             'image'       => $request->hasFile('image') ? $request->file('image')->store('images') : $product->image,
             'music'       => $request->hasFile('music') ? $request->file('music')->store('music') : $product->music,
             'marker'      => $request->hasFile('marker') ? $marker : $product->marker,
-            'model'      => $request->hasFile('model') ? $request->file('model')->storeAs('models', $request->file('model')->getClientOriginalName()) : $product->model
+            'model'      => $request->hasFile('model') ? $request->file('model')->storeAs('models', $request->file('model')->getClientOriginalName()) : $product->model,
+            'model_x'      => $request->model_x,
+            'model_y'      => $request->model_y,
+            'model_z'      => $request->model_z,
+            'model_rotation_x'      => $request->model_rotation_x,
+            'model_rotation_y'      => $request->model_rotation_y,
+            'model_rotation_z'      => $request->model_rotation_z,
+            'model_scale'      => $request->model_scale,
+
         ]);
 
         return redirect()->route('products.index')->with('success', 'Product updated successfully.');
