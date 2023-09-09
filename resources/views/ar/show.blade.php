@@ -47,14 +47,16 @@
         <div>Loading, please wait...</div>
     </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-        <a-nft type="nft" url="{{ 'storage/' . $product->marker }}" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5" detectionMode="mono_and_matrix">
+        <a-nft type="nft" url="{{ 'storage/' . $product->marker }}" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
             <a-entity gltf-model="{{ '/storage/' . $product->model }}" scale="5 5 5" position="50 150 0" rotation="0 180 0"></a-entity>
+            <a-text value="{{ $product->description }}" position="0 -50 0" align="center" width="120" color="#000000"></a-text>
         </a-nft>
         <a-entity camera></a-entity>
     </a-scene>
 
     <script>
         const markerIndicator = document.querySelector('#marker-indicator');
+        const audio = new Audio('{{ asset("storage/" . $product->music) }}');
 
         const setMarkerIndicatorColor = (color) => {
             markerIndicator.style.backgroundColor = color;
@@ -65,12 +67,15 @@
             setMarkerIndicatorColor('blue');
         });
 
+        // when the camera is looking at the marker, play music from $product->music
         scene.addEventListener('arjs-nft-found', (ev) => {
             setMarkerIndicatorColor('green');
+            audio.play();
         });
 
         scene.addEventListener('arjs-nft-lost', (ev) => {
             setMarkerIndicatorColor('red');
+            audio.pause();
         });
     </script>
 </body>

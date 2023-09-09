@@ -34,9 +34,9 @@ class ProductController extends Controller
         $request->validate([
             'name'        => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'image'       => 'required|image|max:1024',
+            'image'       => 'required|image',
             'music'       => 'required|file',
-            'marker'      => 'required|file|mimes:zip|max:1024',
+            'marker'      => 'required|file|mimes:zip',
             'model'      => 'required|file',
         ]);
 
@@ -104,8 +104,8 @@ class ProductController extends Controller
         $request->validate([
             'name'        => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'image'       => 'nullable|image|max:1024',
-            'music'       => 'nullable|file|max:1024',
+            'image'       => 'nullable|image',
+            'music'       => 'nullable|file',
             'marker'      => 'nullable|file|mimes:zip',
             'model'      => 'nullable|file',
         ]);
