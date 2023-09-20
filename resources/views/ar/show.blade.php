@@ -60,6 +60,7 @@
         <a href="{{ $product->link }}" target="_blank" style="color: white; text-decoration: none;">
             Learn More
         </a>
+        @endif
     </div>
 
     <div class="arjs-loader">
