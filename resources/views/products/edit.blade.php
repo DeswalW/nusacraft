@@ -25,7 +25,14 @@
                                 @error('description')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
+                            </div>
 
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" required>{{ old('description') ?? $product->description }}</textarea>
+                                @error('description')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="mb-3">

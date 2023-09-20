@@ -26,7 +26,7 @@ class Product extends Model
         'model_rotation_y',
         'model_rotation_z',
         'model_scale',
-
+        'link'
     ];
 
     /**

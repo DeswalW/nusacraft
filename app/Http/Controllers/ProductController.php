@@ -45,7 +45,7 @@ class ProductController extends Controller
             'model_rotation_y'      => 'required|integer',
             'model_rotation_z'      => 'required|integer',
             'model_scale'      => 'required|numeric',
-
+            'link'      => 'nullable|url',
         ]);
 
         $marker = $request->file('marker')->store('markers-zip');
@@ -90,6 +90,7 @@ class ProductController extends Controller
             'model_rotation_y'      => $request->model_rotation_y,
             'model_rotation_z'      => $request->model_rotation_z,
             'model_scale'      => $request->model_scale,
+            'link'      => $request->link,
         ]);
 
         return redirect()->route('products.index')->with('success', 'Product created successfully.');
@@ -130,7 +131,7 @@ class ProductController extends Controller
             'model_rotation_y'      => 'required|integer',
             'model_rotation_z'      => 'required|integer',
             'model_scale'      => 'required|numeric',
-
+            'link'      => 'nullable|url',
         ]);
 
         if ($request->hasFile('marker')) {
@@ -170,6 +171,7 @@ class ProductController extends Controller
             'model_rotation_y'      => $request->model_rotation_y,
             'model_rotation_z'      => $request->model_rotation_z,
             'model_scale'      => $request->model_scale,
+            'link'      => $request->link,
 
         ]);
 
