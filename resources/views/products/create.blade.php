@@ -28,7 +28,7 @@
 
                             <div class="mb-3">
                                 <label for="link" class="form-label">Link</label>
-                                <textarea class="form-control @error('link') is-invalid @enderror" id="link" name="link" required>{{ old('link') }}</textarea>
+                                <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" name="link" value="{{ old('link') }}" required>
                                 @error('link')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror

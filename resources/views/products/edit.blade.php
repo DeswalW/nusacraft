@@ -28,9 +28,9 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" required>{{ old('description') ?? $product->description }}</textarea>
-                                @error('description')
+                                <label for="link" class="form-label">Link</label>
+                                <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" name="link" value="{{ old('link') ?? $product->link }}" required>
+                                @error('link')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
