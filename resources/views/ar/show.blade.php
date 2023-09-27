@@ -67,7 +67,7 @@
         <div>Loading, please wait...</div>
     </div>
     <div style="width: 100%; height: 100%;">
-        <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+        <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; sourceWidth: 1280; sourceHeight: 720; displayWidth: 1280; displayHeight: 720;">
             <a-nft type="nft" url="{{ 'storage/' . $product->marker }}" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5" emitevents="true" id="nft">
                 <a-entity gltf-model="{{ '/storage/' . $product->model }}" scale="{{ $product->scale }}" position="{{ $product->position }}" rotation="{{ $product->rotation }}" id="model" animation="property: rotation; to: {{ $product->model_rotation_x }} {{ $product->model_rotation_y + 360 }} {{ $product->model_rotation_z }}; loop: true; dur: 10000; easing: linear"></a-entity>
             </a-nft>
@@ -76,6 +76,15 @@
     </div>
 
     <script>
+        // set to full screen and landscape mode
+        const aScene = document.querySelector('a-scene');
+        if (aScene.requestFullscreen) {
+            aScene.requestFullscreen();
+        } else if (aScene.webkitRequestFullscreen) {
+            aScene.webkitRequestFullscreen();
+        }
+        screen.orientation.lock('landscape');
+
         const markerIndicator = document.querySelector('#marker-indicator');
         const audio = new Audio('{{ asset("storage/" . $product->music) }}');
         const marker = document.querySelector('#nft');
