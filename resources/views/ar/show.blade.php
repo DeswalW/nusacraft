@@ -90,6 +90,17 @@
         const marker = document.querySelector('#nft');
         const description = document.querySelector('#description');
 
+        const createEntity = (zAxis = 0) => {
+            // if the model is exist, remove it
+            if (document.querySelector('#model')) {
+                const model = document.querySelector('#model');
+                model.parentNode.removeChild(model);
+            }
+
+            return `
+                <a-entity gltf-model="{{ '/storage/' . $product->model }}" scale="{{ $product->scale }}" position="{{ $product->position }}" rotation="{{ $product->rotation }}" id="model" animation="property: rotation; to: {{ $product->model_rotation_x }} {{ $product->model_rotation_y + 360 }} {{ $product->model_rotation_z }}; loop: true; dur: 10000; easing: linear" material="shader: flat;"></a-entity>
+            `;
+        }
 
         const setMarkerIndicatorColor = (color) => {
             markerIndicator.style.backgroundColor = color;
@@ -104,6 +115,8 @@
             audio.play();
             setMarkerIndicatorColor('green');
             description.style.display = 'block';
+
+            marker.insertAdjacentHTML('beforeend', createEntity());
         });
 
         // when the camera is not looking at the marker, pause music from $product->music
@@ -111,6 +124,8 @@
             audio.pause();
             setMarkerIndicatorColor('red');
             description.style.display = 'none';
+
+            marker.insertAdjacentHTML('beforeend', createEntity());
         });
     </script>
 </body>
