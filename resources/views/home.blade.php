@@ -58,7 +58,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                 </svg>
                             </div>
-                            <a href="{{ route('ar.detail', $product) }}" class="text-gray-500 flex justify-center gap-1 group-hover:gap-2 duration-200 py-2 px-4 rounded hover:border-gray-600 hover:border-2">
+                            <a href="{{ route('ar.detail', $product) }}" class="text-gray-500 flex justify-center gap-1 group-hover:gap-2 duration-200 py-2 px-4 rounded border-2 border-gray-500/0 hover:border-gray-500 hover:border-2">
                                 View Details
                             </a>
                         </div>
