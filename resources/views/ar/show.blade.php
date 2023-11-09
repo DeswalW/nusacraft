@@ -71,7 +71,9 @@
             <a-nft type="nft" url="{{ 'storage/' . $product->marker }}" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5" emitevents="true" id="nft">
                 <a-entity gltf-model="{{ '/storage/' . $product->model }}" scale="{{ $product->scale }}" position="{{ $product->position }}" rotation="{{ $product->rotation }}" id="model" animation="property: rotation; to: {{ $product->model_rotation_x }} {{ $product->model_rotation_y + 360 }} {{ $product->model_rotation_z }}; loop: true; dur: 10000; easing: linear" material="shader: flat;"></a-entity>
             </a-nft>
-            <a-entity camera></a-entity>
+            <a-camera gps-camera rotation-reader>
+
+            </a-camera>
         </a-scene>
     </div>
 
