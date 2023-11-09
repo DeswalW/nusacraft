@@ -72,7 +72,7 @@
             <a-nft type="nft" url="{{ 'storage/' . $product->marker }}" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5" emitevents="true" id="nft">
                 <a-entity gltf-model="{{ '/storage/' . $product->model }}" scale="{{ $product->scale }}" position="{{ $product->position }}" rotation="{{ $product->rotation }}" id="model" animation="property: rotation; to: {{ $product->model_rotation_x }} {{ $product->model_rotation_y + 360 }} {{ $product->model_rotation_z }}; loop: true; dur: 10000; easing: linear" material="shader: flat;"></a-entity>
             </a-nft>
-            <a-entity camera id="camera" locationfinder rotation-reader look-controls>
+            <a-entity camera id="camera" locationfinder>
             </a-entity>
         </a-scene>
     </div>
@@ -81,11 +81,10 @@
         let location = null;
         AFRAME.registerComponent('locationfinder', {
             init() {
+                console.log("init");
                 navigator.geolocation.getCurrentPosition((position) => {
                     console.log("posisi: ", position);
                     location = position;
-                    const camera = document.querySelector('#camera');
-                    camera.setAttribute('gps-camera', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
                 });
             }
         }
@@ -104,7 +103,7 @@
         const audio = new Audio('{{ asset("storage/" . $product->music) }}');
         const marker = document.querySelector('#nft');
         const description = document.querySelector('#description');
-
+        const camera = document.querySelector('#camera');
 
         const removeEntity = () => {
             const model = document.querySelector('#modelLocationBased');
@@ -151,6 +150,10 @@
             audio.play();
             setMarkerIndicatorColor('green');
             description.style.display = 'block';
+            camera.removeAttribute('gps-camera');
+            camera.removeAttribute('rotation-reader');
+            camera.removeAttribute('look-controls');
+
 
             removeEntity();
 
@@ -162,6 +165,9 @@
             audio.pause();
             setMarkerIndicatorColor('red');
             description.style.display = 'none';
+            camera.setAttribute('gps-camera', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
+            camera.setAttribute('rotation-reader', '');
+            camera.setAttribute('look-controls', '');
 
             aScene.insertAdjacentHTML('beforeend', createEntity());
 
