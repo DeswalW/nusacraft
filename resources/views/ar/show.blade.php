@@ -72,7 +72,7 @@
             <a-nft type="nft" url="{{ 'storage/' . $product->marker }}" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5" emitevents="true" id="nft">
                 <a-entity gltf-model="{{ '/storage/' . $product->model }}" scale="{{ $product->scale }}" position="{{ $product->position }}" rotation="{{ $product->rotation }}" id="model" animation="property: rotation; to: {{ $product->model_rotation_x }} {{ $product->model_rotation_y + 360 }} {{ $product->model_rotation_z }}; loop: true; dur: 10000; easing: linear" material="shader: flat;"></a-entity>
             </a-nft>
-            <a-entity camera id="camera" locationfinder>
+            <a-entity camera id="camera" locationfinder rotation-reader look-controls>
             </a-entity>
         </a-scene>
     </div>
@@ -82,10 +82,10 @@
         AFRAME.registerComponent('locationfinder', {
             init() {
                 navigator.geolocation.getCurrentPosition((position) => {
-                    console.log(position);
+                    console.log("posisi: ", position);
                     location = position;
                     const camera = document.querySelector('#camera');
-                    camera.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
+                    camera.setAttribute('gps-camera', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
                 });
             }
         }
@@ -163,7 +163,7 @@
             setMarkerIndicatorColor('red');
             description.style.display = 'none';
 
-            marker.insertAdjacentHTML('beforeend', createEntity());
+            aScene.insertAdjacentHTML('beforeend', createEntity());
 
             // marker.insertAdjacentHTML('beforeend', createEntity());
         });
