@@ -21,7 +21,7 @@ class ARController extends Controller
      */
     public function show(Product $product)
     {
-        return view('ar.show', compact('product'));
+        return view('ar.mindar', compact('product'));
     }
 
     public function detail(Product $product)
