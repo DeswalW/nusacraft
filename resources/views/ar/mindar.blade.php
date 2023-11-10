@@ -56,6 +56,8 @@
         const audio = new Audio('{{ asset("storage/" . $product->music) }}');
         const description = document.querySelector('#description');
 
+        audio.loop = true;
+
         scene.addEventListener('arReady', () => {
             markerIndicator.style.display = 'block';
             markerIndicator.style.backgroundColor = 'blue';
