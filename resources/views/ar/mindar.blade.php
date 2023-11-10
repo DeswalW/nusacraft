@@ -7,8 +7,32 @@
     </title>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+    <style>
+
+        #marker-indicator {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: red;
+        }
+    </style>
   </head>
   <body>
+    <div id="marker-indicator"></div>
+    <!-- back button -->
+    <a href="{{ route('home') }}" style="position: absolute; top: 10px; left: 10px; z-index: 9999; font-size: 1.5em; color: white; text-decoration: none;">&larr; Back</a>
+    <!-- product description show when the marker found -->
+    <div id="description" style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 9999; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 10px; display: none; width: 80%; text-align: center;">
+        <p>{{ $product->description }}</p>
+        @if ($product->link)
+        <a href="{{ $product->link }}" target="_blank" style="color: white; text-decoration: none;">
+            Learn More
+        </a>
+        @endif
+    </div>
     <a-scene mindar-image="imageTargetSrc: {{ asset('storage/' . $product->marker) }};" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
 	<!-- <img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/card-example/card.png" /> -->
@@ -24,5 +48,31 @@
         >
       </a-entity>
     </a-scene>
+
+    <script>
+        const target = document.querySelector('#target');
+        const markerIndicator = document.querySelector('#marker-indicator');
+        const scene = document.querySelector('a-scene');
+        const audio = new Audio('{{ asset("storage/" . $product->music) }}');
+        const description = document.querySelector('#description');
+
+        scene.addEventListener('arReady', () => {
+            markerIndicator.style.display = 'block';
+            markerIndicator.style.backgroundColor = 'blue';
+        });
+
+        target.addEventListener('targetFound', () => {
+            markerIndicator.style.backgroundColor = 'green';
+            audio.play();
+            description.style.display = 'block';
+        });
+
+        target.addEventListener('targetLost', () => {
+            markerIndicator.style.backgroundColor = 'red';
+            audio.pause();
+            description.style.display = 'none';
+        });
+
+    </script>
   </body>
 </html>
