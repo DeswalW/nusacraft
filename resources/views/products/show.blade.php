@@ -3,9 +3,9 @@
     <!-- display in card -->
     <section class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 gap-2">
                 <img src="{{ asset('storage/' . $product->image) }}" class="img-fluid" alt="{{ $product->name }}">
-                <p>{{ $product->image_description }}</p>
+                <img src="{{ asset('storage/' . $product->image_description) }}" class="img-fluid" alt="{{ $product->name }}">
             </div>
             <div class="col-12 col-md-6">
                 <h1>{{ $product->name }}</h1>

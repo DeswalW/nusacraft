@@ -52,8 +52,8 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="image_description" class="form-label">Image Description</label>
-                                <textarea class="form-control @error('image_description') is-invalid @enderror" id="image_description" name="image_description" required>{{ old('image_description') ?? $product->image_description }}</textarea>
+                                <label for="image_description" class="form-label">Image Descripton</label>
+                                <input type="file" class="form-control @error('image_description') is-invalid @enderror" id="image_description" name="image_description">
                                 @error('image_description')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
