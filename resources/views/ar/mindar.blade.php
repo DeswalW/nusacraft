@@ -28,7 +28,7 @@
     <div id="description" style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 9999; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 10px; display: none; width: 80%; text-align: center;">
         <p style="text-align: justify;">{{ $product->description }}</p>
         @if ($product->link)
-        <a href="{{ $product->link }}" target="_blank" style="color: white; text-decoration: none;">
+        <a href="{{ $product->link }}" style="color: white; text-decoration: none;">
             Learn More
         </a>
         @endif
@@ -73,6 +73,13 @@
             markerIndicator.style.backgroundColor = 'red';
             audio.pause();
             description.style.display = 'none';
+        });
+
+        // when the page is leaving, and audio is playing, pause the audio
+        window.addEventListener('beforeunload', () => {
+            if (!audio.paused) {
+                audio.pause();
+            }
         });
 
     </script>
