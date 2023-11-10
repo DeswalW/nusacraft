@@ -5,10 +5,15 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <img src="{{ asset('storage/' . $product->image) }}" class="img-fluid" alt="{{ $product->name }}">
+                <p>{{ $product->image_description }}</p>
             </div>
             <div class="col-12 col-md-6">
                 <h1>{{ $product->name }}</h1>
                 <p>{{ $product->description }}</p>
+                <h2>
+                    Detail
+                </h2>
+                <p>{{ $product->detail }}</p>
                 <p>{{ $product->created_at->diffForHumans() }}</p>
                 <audio controls>
                     <source src="{{ asset('storage/' . $product->music) }}" type="audio/mpeg">

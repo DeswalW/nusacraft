@@ -34,7 +34,9 @@ class ProductController extends Controller
         $request->validate([
             'name'        => 'required|string|max:255',
             'description' => 'required|string|max:255',
+            'detail'      => 'required|string',
             'image'       => 'required|image',
+            'image_description'       => 'required|string',
             'music'       => 'required|file',
             'marker'      => 'required|file',
             'model'      => 'required|file',
@@ -79,7 +81,9 @@ class ProductController extends Controller
         $product = Product::create([
             'name'        => $request->name,
             'description' => $request->description,
+            'detail'      => $request->detail,
             'image'       => $request->file('image')->store('images'),
+            'image_description'       => $request->image_description,
             'music'       => $request->file('music')->store('music'),
             // 'marker'      => 'markers/' . str($request->name)->slug() . '/' . $files[0],
             'marker'      => $request->file('marker')->store('markers'),
@@ -121,7 +125,9 @@ class ProductController extends Controller
         $request->validate([
             'name'        => 'required|string|max:255',
             'description' => 'required|string|max:255',
+            'detail'      => 'required|string',
             'image'       => 'nullable|image',
+            'image_description'       => 'required|string',
             'music'       => 'nullable|file',
             'marker'      => 'nullable|file',
             'model'      => 'nullable|file',
@@ -161,7 +167,9 @@ class ProductController extends Controller
         $product->update([
             'name'        => $request->name,
             'description' => $request->description,
+            'detail'      => $request->detail,
             'image'       => $request->hasFile('image') ? $request->file('image')->store('images') : $product->image,
+            'image_description'       => $request->image_description,
             'music'       => $request->hasFile('music') ? $request->file('music')->store('music') : $product->music,
             // 'marker'      => $request->hasFile('marker') ? $marker : $product->marker,
             'marker'      => $request->hasFile('marker') ? $request->file('marker')->store('markers') : $product->marker,

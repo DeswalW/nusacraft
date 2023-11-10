@@ -28,7 +28,13 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            $table->dropColumn('model_x');
+            $table->dropColumn('model_y');
+            $table->dropColumn('model_z');
+            $table->dropColumn('model_rotation_x');
+            $table->dropColumn('model_rotation_y');
+            $table->dropColumn('model_rotation_z');
+            $table->dropColumn('model_scale');
         });
     }
 };

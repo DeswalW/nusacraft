@@ -27,6 +27,14 @@
                             </div>
 
                             <div class="mb-3">
+                                <label for="detail" class="form-label">Detail</label>
+                                <textarea class="form-control @error('detail') is-invalid @enderror" id="detail" name="detail" required>{{ old('detail') }}</textarea>
+                                @error('detail')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="link" class="form-label">Link</label>
                                 <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" name="link" value="{{ old('link') }}" required>
                                 @error('link')
@@ -38,6 +46,14 @@
                                 <label for="image" class="form-label">Image</label>
                                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" required>
                                 @error('image')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="image_description" class="form-label">Image Description</label>
+                                <textarea class="form-control @error('image_description') is-invalid @enderror" id="image_description" name="image_description" required>{{ old('image_description') }}</textarea>
+                                @error('image_description')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
