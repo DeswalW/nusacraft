@@ -72,21 +72,21 @@
                             <div class="mb-3 row">
                                 <div class="col">
                                     <label for="model_x" class="form-label">Model X</label>
-                                    <input type="number" step="any" class="form-control @error('model_x') is-invalid @enderror" id="model_x" name="model_x" value="{{ old('model_x') ?? $product->model_x }}" required>
+                                    <input type="number" class="form-control @error('model_x') is-invalid @enderror" id="model_x" name="model_x" value="{{ old('model_x') ?? $product->model_x }}" required>
                                     @error('model_x')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col">
                                     <label for="model_y" class="form-label">Model Y</label>
-                                    <input type="number" step="any" class="form-control @error('model_y') is-invalid @enderror" id="model_y" name="model_y" value="{{ old('model_y') ?? $product->model_y }}" required>
+                                    <input type="number" class="form-control @error('model_y') is-invalid @enderror" id="model_y" name="model_y" value="{{ old('model_y') ?? $product->model_y }}" required>
                                     @error('model_y')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col">
                                     <label for="model_z" class="form-label">Model Z</label>
-                                    <input type="number" step="any" class="form-control @error('model_z') is-invalid @enderror" id="model_z" name="model_z" value="{{ old('model_z') ?? $product->model_z }}" required>
+                                    <input type="number" class="form-control @error('model_z') is-invalid @enderror" id="model_z" name="model_z" value="{{ old('model_z') ?? $product->model_z }}" required>
                                     @error('model_z')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -97,21 +97,21 @@
                             <div class="mb-3 row">
                                 <div class="col">
                                     <label for="model_rotation_x" class="form-label">Rotation X</label>
-                                    <input type="number" step="any" class="form-control @error('model_rotation_x') is-invalid @enderror" id="model_rotation_x" name="model_rotation_x" value="{{ old('model_rotation_x') ?? $product->model_rotation_x }}" required>
+                                    <input type="number" class="form-control @error('model_rotation_x') is-invalid @enderror" id="model_rotation_x" name="model_rotation_x" value="{{ old('model_rotation_x') ?? $product->model_rotation_x }}" required>
                                     @error('model_rotation_x')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col">
                                     <label for="model_rotation_y" class="form-label">Rotation Y</label>
-                                    <input type="number" step="any" class="form-control @error('model_rotation_y') is-invalid @enderror" id="model_rotation_y" name="model_rotation_y" value="{{ old('model_rotation_y') ?? $product->model_rotation_y }}" required>
+                                    <input type="number" class="form-control @error('model_rotation_y') is-invalid @enderror" id="model_rotation_y" name="model_rotation_y" value="{{ old('model_rotation_y') ?? $product->model_rotation_y }}" required>
                                     @error('model_rotation_y')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col">
                                     <label for="model_rotation_z" class="form-label">Rotation Z</label>
-                                    <input type="number" step="any" class="form-control @error('model_rotation_z') is-invalid @enderror" id="model_rotation_z" name="model_rotation_z" value="{{ old('model_rotation_z') ?? $product->model_rotation_z }}" required>
+                                    <input type="number" class="form-control @error('model_rotation_z') is-invalid @enderror" id="model_rotation_z" name="model_rotation_z" value="{{ old('model_rotation_z') ?? $product->model_rotation_z }}" required>
                                     @error('model_rotation_z')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -121,7 +121,7 @@
                             <!-- model scale -->
                             <div class="mb-3">
                                 <label for="model_scale" class="form-label">Scale</label>
-                                <input type="number" step="any" class="form-control @error('model_scale') is-invalid @enderror" id="model_scale" name="model_scale" value="{{ old('model_scale') ?? $product->model_scale }}" required>
+                                <input type="number" class="form-control @error('model_scale') is-invalid @enderror" id="model_scale" name="model_scale" value="{{ old('model_scale') ?? $product->model_scale }}" required>
                                 @error('model_scale')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror

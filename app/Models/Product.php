@@ -49,7 +49,8 @@ class Product extends Model
 
     public function getPositionAttribute()
     {
-        return "{$this->model_x} {$this->model_y} {$this->model_z}";
+        // return "{$this->model_x} {$this->model_y} {$this->model_z}";
+        return $this->model_x / 10 . " " . $this->model_y / 10 . " " . $this->model_z / 10;
     }
 
     public function getRotationAttribute()
@@ -59,6 +60,7 @@ class Product extends Model
 
     public function getScaleAttribute()
     {
-        return "{$this->model_scale} {$this->model_scale} {$this->model_scale}";
+        // return "{$this->model_scale} {$this->model_scale} {$this->model_scale}";
+        return $this->model_scale / 10 . " " . $this->model_scale / 10 . " " . $this->model_scale / 10;
     }
 }
