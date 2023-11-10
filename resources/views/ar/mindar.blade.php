@@ -26,7 +26,7 @@
     <a href="{{ route('home') }}" style="position: absolute; top: 10px; left: 10px; z-index: 9999; font-size: 1.5em; color: white; text-decoration: none;">&larr; Back</a>
     <!-- product description show when the marker found -->
     <div id="description" style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 9999; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 10px; display: none; width: 80%; text-align: center;">
-        <p>{{ $product->description }}</p>
+        <p style="text-align: justify;">{{ $product->description }}</p>
         @if ($product->link)
         <a href="{{ $product->link }}" target="_blank" style="color: white; text-decoration: none;">
             Learn More
