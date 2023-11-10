@@ -61,6 +61,6 @@ class Product extends Model
     public function getScaleAttribute()
     {
         // return "{$this->model_scale} {$this->model_scale} {$this->model_scale}";
-        return $this->model_scale / 10 . " " . $this->model_scale / 10 . " " . $this->model_scale / 10;
+        return $this->model_scale / 1000 . " " . $this->model_scale / 1000 . " " . $this->model_scale / 1000;
     }
 }
