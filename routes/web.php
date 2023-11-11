@@ -38,4 +38,13 @@ Route::group(
     }
 );
 
+Route::get('/proculture', function () {
+    return view('proculture');
+});
+
+
+Route::get('/navbar', function () {
+    return view('navbar');
+});
+
 require __DIR__ . '/auth.php';
