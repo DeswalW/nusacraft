@@ -57,7 +57,7 @@
     <div id="description" style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 9999; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 10px; display: none; width: 80%; text-align: center;">
         <p>{{ $product->description }}</p>
         @if ($product->link)
-        <a href="{{ $product->link }}" target="_blank" style="color: white; text-decoration: none;">
+        <a href="{{ $product->link }}" style="color: white; text-decoration: none;">
             Learn More
         </a>
         @endif
@@ -71,7 +71,9 @@
             <a-nft type="nft" url="{{ 'storage/' . $product->marker }}" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5" emitevents="true" id="nft">
                 <a-entity gltf-model="{{ '/storage/' . $product->model }}" scale="{{ $product->scale }}" position="{{ $product->position }}" rotation="{{ $product->rotation }}" id="model" animation="property: rotation; to: {{ $product->model_rotation_x }} {{ $product->model_rotation_y + 360 }} {{ $product->model_rotation_z }}; loop: true; dur: 10000; easing: linear" material="shader: flat;"></a-entity>
             </a-nft>
-            <a-entity camera></a-entity>
+            <a-camera gps-camera rotation-reader>
+
+            </a-camera>
         </a-scene>
     </div>
 
@@ -90,17 +92,6 @@
         const marker = document.querySelector('#nft');
         const description = document.querySelector('#description');
 
-        const createEntity = (zAxis = 0) => {
-            // if the model is exist, remove it
-            if (document.querySelector('#model')) {
-                const model = document.querySelector('#model');
-                model.parentNode.removeChild(model);
-            }
-
-            return `
-                <a-entity gltf-model="{{ '/storage/' . $product->model }}" scale="{{ $product->scale }}" position="{{ $product->position }}" rotation="{{ $product->rotation }}" id="model" animation="property: rotation; to: {{ $product->model_rotation_x }} {{ $product->model_rotation_y + 360 }} {{ $product->model_rotation_z }}; loop: true; dur: 10000; easing: linear" material="shader: flat;"></a-entity>
-            `;
-        }
 
         const setMarkerIndicatorColor = (color) => {
             markerIndicator.style.backgroundColor = color;
@@ -115,8 +106,6 @@
             audio.play();
             setMarkerIndicatorColor('green');
             description.style.display = 'block';
-
-            marker.insertAdjacentHTML('beforeend', createEntity());
         });
 
         // when the camera is not looking at the marker, pause music from $product->music
@@ -124,8 +113,13 @@
             audio.pause();
             setMarkerIndicatorColor('red');
             description.style.display = 'none';
+        });
 
-            marker.insertAdjacentHTML('beforeend', createEntity());
+        // if the page is leaving, and music is playing, pause the music
+        window.addEventListener('beforeunload', (ev) => {
+            if (!audio.paused) {
+                audio.pause();
+            }
         });
     </script>
 </body>

@@ -13,7 +13,6 @@ class ARController extends Controller
     public function index()
     {
         $products = Product::all();
-
         return view('home', compact('products'));
     }
 
@@ -22,6 +21,11 @@ class ARController extends Controller
      */
     public function show(Product $product)
     {
-        return view('ar.show', compact('product'));
+        return view('ar.mindar', compact('product'));
+    }
+
+    public function detail(Product $product)
+    {
+        return view('ar.detail', compact('product'));
     }
 }

@@ -3,12 +3,17 @@
     <!-- display in card -->
     <section class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 gap-2">
                 <img src="{{ asset('storage/' . $product->image) }}" class="img-fluid" alt="{{ $product->name }}">
+                <img src="{{ asset('storage/' . $product->image_description) }}" class="img-fluid" alt="{{ $product->name }}">
             </div>
             <div class="col-12 col-md-6">
                 <h1>{{ $product->name }}</h1>
                 <p>{{ $product->description }}</p>
+                <h2>
+                    Detail
+                </h2>
+                <p>{{ $product->detail }}</p>
                 <p>{{ $product->created_at->diffForHumans() }}</p>
                 <audio controls>
                     <source src="{{ asset('storage/' . $product->music) }}" type="audio/mpeg">

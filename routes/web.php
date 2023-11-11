@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ARController::class, 'index'])->name('home');
 
 Route::get('/ar/{product:slug}', [ARController::class, 'show'])->name('ar.show');
+Route::get('/ar/detail/{product:slug}', [ARController::class, 'detail'])->name('ar.detail');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -43,8 +44,5 @@ Route::get('/proculture', function () {
 });
 
 
-Route::get('/navbar', function () {
-    return view('navbar');
-});
 
 require __DIR__ . '/auth.php';

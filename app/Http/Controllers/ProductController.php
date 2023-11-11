@@ -34,9 +34,11 @@ class ProductController extends Controller
         $request->validate([
             'name'        => 'required|string|max:255',
             'description' => 'required|string|max:255',
+            'detail'      => 'required|string',
             'image'       => 'required|image',
+            'image_description'       => 'required|image',
             'music'       => 'required|file',
-            'marker'      => 'required|file|mimes:zip',
+            'marker'      => 'required|file',
             'model'      => 'required|file',
             'model_x'      => 'required|integer',
             'model_y'      => 'required|integer',
@@ -48,40 +50,43 @@ class ProductController extends Controller
             'link'      => 'nullable|url',
         ]);
 
-        $marker = $request->file('marker')->store('markers-zip');
-        // // unzip the file
+        // $marker = $request->file('marker')->store('markers-zip');
+        // // // unzip the file
+        // // $zip = new ZipArchive;
+        // // $zip->open(storage_path('app/' . $marker));
+        // // $zip->extractTo(storage_path('app/markers/' . str($request->name)->slug()));
+        // // // foreach the files and get the name of a file with format fset
+        // // $files = [];
+
+        // // $zip->close();
+
+        // // unzip the file, and get the name of the file inside the zip that has the format fset
         // $zip = new ZipArchive;
         // $zip->open(storage_path('app/' . $marker));
-        // $zip->extractTo(storage_path('app/markers/' . str($request->name)->slug()));
-        // // foreach the files and get the name of a file with format fset
         // $files = [];
-
+        // for ($i = 0; $i < $zip->numFiles; $i++) {
+        //     $filename = $zip->getNameIndex($i);
+        //     if (str_ends_with($filename, '.fset')) {
+        //         $files[] = $filename;
+        //     }
+        // }
+        // $zip->extractTo(storage_path('app/markers/' . str($request->name)->slug()));
         // $zip->close();
 
-        // unzip the file, and get the name of the file inside the zip that has the format fset
-        $zip = new ZipArchive;
-        $zip->open(storage_path('app/' . $marker));
-        $files = [];
-        for ($i = 0; $i < $zip->numFiles; $i++) {
-            $filename = $zip->getNameIndex($i);
-            if (str_ends_with($filename, '.fset')) {
-                $files[] = $filename;
-            }
-        }
-        $zip->extractTo(storage_path('app/markers/' . str($request->name)->slug()));
-        $zip->close();
-
-        // remove the file format
-        $files = array_map(function ($file) {
-            return str_replace('.fset', '', $file);
-        }, $files);
+        // // remove the file format
+        // $files = array_map(function ($file) {
+        //     return str_replace('.fset', '', $file);
+        // }, $files);
 
         $product = Product::create([
             'name'        => $request->name,
             'description' => $request->description,
+            'detail'      => $request->detail,
             'image'       => $request->file('image')->store('images'),
+            'image_description'       => $request->file('image_description')->store('images'),
             'music'       => $request->file('music')->store('music'),
-            'marker'      => 'markers/' . str($request->name)->slug() . '/' . $files[0],
+            // 'marker'      => 'markers/' . str($request->name)->slug() . '/' . $files[0],
+            'marker'      => $request->file('marker')->store('markers'),
             'model'      => $request->file('model')->storeAs('models', $request->file('model')->getClientOriginalName()),
             'model_x'      => $request->model_x,
             'model_y'      => $request->model_y,
@@ -120,9 +125,11 @@ class ProductController extends Controller
         $request->validate([
             'name'        => 'required|string|max:255',
             'description' => 'required|string|max:255',
+            'detail'      => 'required|string',
             'image'       => 'nullable|image',
+            'image_description'       => 'nullable|image',
             'music'       => 'nullable|file',
-            'marker'      => 'nullable|file|mimes:zip',
+            'marker'      => 'nullable|file',
             'model'      => 'nullable|file',
             'model_x'      => 'required|integer',
             'model_y'      => 'required|integer',
@@ -134,35 +141,38 @@ class ProductController extends Controller
             'link'      => 'nullable|url',
         ]);
 
-        if ($request->hasFile('marker')) {
-            $marker = $request->file('marker')->store('markers');
-            // unzip the file and get the name of the file inside the zip that has the format fset
-            $zip = new ZipArchive;
-            $zip->open(storage_path('app/' . $marker));
-            $files = [];
-            for ($i = 0; $i < $zip->numFiles; $i++) {
-                $filename = $zip->getNameIndex($i);
-                if (str_ends_with($filename, '.fset')) {
-                    $files[] = $filename;
-                }
-            }
-            $zip->extractTo(storage_path('app/markers/' . str($request->name)->slug()));
-            $zip->close();
+        // if ($request->hasFile('marker')) {
+        //     $marker = $request->file('marker')->store('markers');
+        //     // unzip the file and get the name of the file inside the zip that has the format fset
+        //     $zip = new ZipArchive;
+        //     $zip->open(storage_path('app/' . $marker));
+        //     $files = [];
+        //     for ($i = 0; $i < $zip->numFiles; $i++) {
+        //         $filename = $zip->getNameIndex($i);
+        //         if (str_ends_with($filename, '.fset')) {
+        //             $files[] = $filename;
+        //         }
+        //     }
+        //     $zip->extractTo(storage_path('app/markers/' . str($request->name)->slug()));
+        //     $zip->close();
 
-            // remove the file format
-            $files = array_map(function ($file) {
-                return str_replace('.fset', '', $file);
-            }, $files);
+        //     // remove the file format
+        //     $files = array_map(function ($file) {
+        //         return str_replace('.fset', '', $file);
+        //     }, $files);
 
-            $marker = 'markers/' . str($request->name)->slug() . '/' . $files[0];
-        }
+        //     $marker = 'markers/' . str($request->name)->slug() . '/' . $files[0];
+        // }
 
         $product->update([
             'name'        => $request->name,
             'description' => $request->description,
+            'detail'      => $request->detail,
             'image'       => $request->hasFile('image') ? $request->file('image')->store('images') : $product->image,
+            'image_description'       => $request->hasFile('image_description') ? $request->file('image_description')->store('images') : $product->image_description,
             'music'       => $request->hasFile('music') ? $request->file('music')->store('music') : $product->music,
-            'marker'      => $request->hasFile('marker') ? $marker : $product->marker,
+            // 'marker'      => $request->hasFile('marker') ? $marker : $product->marker,
+            'marker'      => $request->hasFile('marker') ? $request->file('marker')->store('markers') : $product->marker,
             'model'      => $request->hasFile('model') ? $request->file('model')->storeAs('models', $request->file('model')->getClientOriginalName()) : $product->model,
             'model_x'      => $request->model_x,
             'model_y'      => $request->model_y,
