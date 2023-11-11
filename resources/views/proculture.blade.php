@@ -105,19 +105,23 @@
                     <!-- List -->
                     <ol class="pt-8 space-y-5 border-gray-200 my-7 dark:border-gray-700">
                         <li class="flex space-x-3">
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">1. Klik icon camera</span>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">1. Pilih produk kaos yang telah kamu beli</span>
                         </li>
                         <li class="flex space-x-3">
 
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">2. Arahkan camera pada design kaos</span>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">2. Klik tombol "View in Ar"</span>
                         </li>
                         <li class="flex space-x-3">
 
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">3. 3d model akan muncul </span>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">3. Arahkan kamera pada gambar kecil di kiri bawah kaos</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">4. Klik icon panah untuk melihat penjelasan lebih detail </span>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">4. Model 3d dan voice over deskripsi akan muncul</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">5. Klik "Learn More" untuk melihat deskripsi lebih lengkap</span>
                         </li>
                     </ol>
                 </div>
@@ -277,99 +281,78 @@
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> How does the billing work?</span>
+                            <span> Apa itu Augmented Reality?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">Springerdata offers a variety of
-                            billing options, including monthly and annual subscription plans, as well as pay-as-you-go
-                            pricing for certain services. Payment is typically made through a credit card or other
-                            secure online payment method.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">
+                            Augmented Reality atau AR  adalah teknologi yang memperoleh penggabungan secara real-time terhadap
+                            digital kontenyang dibuat oleh komputer dengan dunia nyata. Augmented Reality
+                            dapat membuat pengguna melihat objek maya 2D atau 3D yang diproyeksikan terhadap dunia nyata.
                         </p>
                     </details>
                 </div>
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> Can I get a refund for my subscription?</span>
+                            <span> Bahan apa yang digunakan pada kaos?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">We offer a 30-day money-back
-                            guarantee for most of its subscription plans. If you are not satisfied with your
-                            subscription within the first 30 days, you can request a full refund. Refunds for
-                            subscriptions that have been active for longer than 30 days may be considered on a
-                            case-by-case basis.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">
+                            Produk Proculture menyediakan bahan kain cotton combed 24s dan 20s.
                         </p>
                     </details>
                 </div>
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> How do I cancel my subscription?</span>
+                            <span> Apa jenis sablon yang digunakan?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">To cancel your subscription, you can
-                            log in to your account and navigate to the subscription management page. From there, you
-                            should be able to cancel your subscription and stop future billing.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">
+                            Sablon yang digunakan adalah sablon dengan metode DTF (Digital Transfer Film).
                         </p>
                     </details>
                 </div>
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> Is there a free trial?</span>
+                            <span> Bagaimana cara membeli produk Proculture?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">We offer a free trial of our software
-                            for a limited time. During the trial period, you will have access to a limited set of
-                            features and functionality, but you will not be charged.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">
+                            Produk Proculture dapat dipesan melalui Shopee, Tokopedia, Instagram dan Whatsapp.
                         </p>
                     </details>
                 </div>
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> How do I contact support?</span>
+                            <span> Apakah fiur Augmented Realitynya membutuhkan aplikasi tambahan?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">If you need help with our platform or
-                            have any other questions, you can contact the company's support team by submitting a support
-                            request through the website or by emailing support@ourwebsite.com.
-                        </p>
-                    </details>
-                </div>
-                <div class="py-5">
-                    <details class="group">
-                        <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> Do you offer any discounts or promotions?</span>
-                            <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                        </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">We may offer discounts or promotions
-                            from time to time. To stay up-to-date on the latest deals and special offers, you can sign
-                            up for the company's newsletter or follow it on social media.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">
+                            Fitur Augmented Reality pada produk Proculture tidak membutuhkan aplikasi tambahan,
+                            cukup buka website Proculture untuk menggunakan fitur tersebut.
                         </p>
                     </details>
                 </div>
