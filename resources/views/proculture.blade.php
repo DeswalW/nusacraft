@@ -34,26 +34,18 @@
                 </button>
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-start md:flex-row">
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#home">Home</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#product">Product</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#how">How it works</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#team">Team</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#faq">FAQ</a>
+                <a class="px-4 py-2 mt-2 text-2xl font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#home">Home</a>
+                <a class="px-4 py-2 mt-2 text-2xl font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#product">Product</a>
+                <a class="px-4 py-2 mt-2 text-2xl font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#how">How it works</a>
+                <a class="px-4 py-2 mt-2 text-2xl font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#team">Team</a>
+                <a class="px-4 py-2 mt-2 text-2xl font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#faq">FAQ</a>
             </nav>
-            <div :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row px-5 gap-4">
-                <a href="javascript:void(0)" class="inline-flex items-center justify-center w-full rounded-full border border-blue-700 bg-primary py-3 text-center text-base font-medium text-blue-500 hover:border-[#1B44C8] hover:bg-[#1B44C8] active:border-[#1B44C8] active:bg-[#1B44C8] disabled:bg-gray-3 disabled:text-dark-5 mr-8">
-                    Login
-                </a>
-                <a href="javascript:void(0)" class=" md:inline-flex items-center justify-center w-full py-3 rounded-full border border-blue-700 bg-[#5272EE] text-center text-base font-medium text-white hover:border-[#1B44C8] hover:bg-[#1B44C8] active:border-[#1B44C8] active:bg-[#1B44C8] disabled:bg-gray-3 disabled:text-dark-5">
-                    Sign Up
-                </a>
-            </div>
         </div>
 
     </header>
     <!-- Start block -->
     <section class="bg-white dark:bg-[#E9EEFF] " id="home">
-        <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28 ">
+        <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28 justify-center">
             <div class="mr-auto place-self-center lg:col-span-7">
                 <h1 class="max-w-2xl mb-4 text-4xl sm:text-left md:text-left ld:text-left font-extrabold leading-none tracking-tight md:text-5xl xl:text-7xl dark:text-[#5272EE] text-center">PROCULTURE</h1>
                 <h2 class="max-w-2xl mb-4 text-xl sm:text-left md:text-left ld:text-left font-extrabold leading-none tracking-tight md:text-5xl xl:text-xl dark:text-[#5272EE]  text-center">PRO KEBUDAYAN PRO TEKNOLOGI</h2>
@@ -67,7 +59,7 @@
     <!-- End block -->
     <!-- Product Start -->
     <!-- source: https://github.com/mfg888/Responsive-Tailwind-CSS-Grid/blob/main/index.html -->
-    <div class="flex flex-col items-center justify-center py-8" id="product" >
+    <div class="flex mx-auto flex-col items-center justify-center py-8" id="product" >
         <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-[#5272EE]">Our Products</h2>
         <!-- product list -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 justify-center">
@@ -85,9 +77,6 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                             </svg>
                         </div>
-                    <a href="{{ route('ar.detail', $product) }}" class="text-gray-500 flex justify-center gap-1 group-hover:gap-2 duration-200 py-2 px-4 rounded border-2 border-gray-500/0 hover:border-gray-500 hover:border-2">
-                        View Details
-                    </a>
                 </div>
                 </a>
             </div>
@@ -159,14 +148,12 @@
                                 <a href="#" class="mx-auto">
                                     <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100" src="/Deswal.png">
                                 </a>
-
                                 <!-- Details -->
                                 <div class="text-center mt-6">
                                     <!-- Name -->
                                     <h1 class="text-gray-900 text-xl font-bold mb-1">
                                         Deswal Waskito
                                     </h1>
-
                                     <!-- Title -->
                                     <div class="text-gray-700 font-light mb-2">
                                         Chief Executive Officer
@@ -271,7 +258,7 @@
     </div>
     <!-- ====== Cards Section End -->
     <!-- Faq Start -->
-    <div class="relative w-full bg-white px-6 pt-10 pb-8 mt-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10" id="faq">
+    <div class="relative w-full bg-white px-6 pt-10 pb-8 my-4 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10" id="faq">
         <div class="mx-auto px-5">
             <div class="flex flex-col items-center">
                 <h2 class="mt-5 text-center text-3xl font-bold tracking-tight md:text-5xl">FAQ</h2>
