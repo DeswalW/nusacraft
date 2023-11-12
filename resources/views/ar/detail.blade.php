@@ -14,7 +14,7 @@
             <a href="{{ route('proculture') }}" style="position: absolute; top: 10px; left: 10px; z-index: 9999; font-size: 1.5em; color: rgb(0, 0, 0); text-decoration: none;">&larr; Back</a>
             <!-- content -->
             <div class="mt-12 px-6">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold flex justify-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold flex justify-center text-center mt-20">
                     {{ $product->name }}
                 </h2>
                 <div class="max-w-full flex mt-4">
