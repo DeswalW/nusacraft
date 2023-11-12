@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ARController::class, 'index'])->name('home');
+Route::get('/', [ARController::class, 'index'])->name('proculture');
 
 Route::get('/ar/{product:slug}', [ARController::class, 'show'])->name('ar.show');
 Route::get('/ar/detail/{product:slug}', [ARController::class, 'detail'])->name('ar.detail');
@@ -38,11 +38,5 @@ Route::group(
         Route::resource('products', ProductController::class);
     }
 );
-
-Route::get('/proculture', function () {
-    return view('proculture');
-});
-
-
 
 require __DIR__ . '/auth.php';
