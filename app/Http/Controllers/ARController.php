@@ -13,7 +13,7 @@ class ARController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('home', compact('products'));
+        return view('proculture', compact('products'));
     }
 
     /**
