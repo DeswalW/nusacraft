@@ -9,7 +9,7 @@
         </title>
     </head>
     <body>
-        <div class="mx-auto max-w-md sm:bg-red-200 md:bg-green-200 lg:bg-yellow-200 sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
+        <div class="mx-auto max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
             <!-- back button -->
             <a href="{{ route('proculture') }}" style="position: absolute; top: 10px; left: 10px; z-index: 9999; font-size: 1.5em; color: rgb(0, 0, 0); text-decoration: none;">&larr; Back</a>
             <!-- content -->
