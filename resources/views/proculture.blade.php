@@ -55,16 +55,9 @@
     <section class="bg-white dark:bg-[#E9EEFF] " id="home">
         <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28 ">
             <div class="mr-auto place-self-center lg:col-span-7">
-                <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-7xl dark:text-[#5272EE]">PROCULTURE</h1>
-                <h2 class="max-w-2xl mb-4 text-xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-xl dark:text-[#5272EE]">PRO KEBUDAYAN PRO TEKNOLOGI</h2>
-                <p class=" font-light text-gray-500 lg:mb-8 md:text-xs lg:text-base dark:text-gray-400 text-xs">Kaos kualitas tinggi dengan teknologi terkini <br> augmented reality</p>
-                <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4 mt-5">
-                    <a href="javascript:void(0)" class="inline-flex items-center justify-center rounded-3xl border border-transparent bg-[#5272EE] px-7 py-3 text-center text-base font-medium text-white shadow-1 hover:bg-gray-2 hover:text-body-color active:border-blue-light-5 active:bg-blue-light-5 disabled:border-gray-3 disabled:bg-gray-3 disabled:text-dark-5 dark:hover:text-dark-6">
-                        <span class="pr-[10px]">
-                        </span>
-                        Try Now
-                    </a>
-                </div>
+                <h1 class="max-w-2xl mb-4 text-4xl sm:text-left md:text-left ld:text-left font-extrabold leading-none tracking-tight md:text-5xl xl:text-7xl dark:text-[#5272EE] text-center">PROCULTURE</h1>
+                <h2 class="max-w-2xl mb-4 text-xl sm:text-left md:text-left ld:text-left font-extrabold leading-none tracking-tight md:text-5xl xl:text-xl dark:text-[#5272EE]  text-center">PRO KEBUDAYAN PRO TEKNOLOGI</h2>
+                <p class=" font-light text-gray-500 lg:mb-8 md:text-xs lg:text-base sm:text-left md:text-left ld:text-left dark:text-gray-400 text-xs text-center">Kaos kualitas tinggi dengan teknologi terkini <br> augmented reality</p>
             </div>
             <div class="mt-0 lg:col-span-5 lg:flex">
                 <img src="/kaos.png" alt="hero image" width="900">
@@ -74,8 +67,8 @@
     <!-- End block -->
     <!-- Product Start -->
     <!-- source: https://github.com/mfg888/Responsive-Tailwind-CSS-Grid/blob/main/index.html -->
-    <div class="flex flex-col items-center justify-center py-8">
-        <h2 class="text-2xl font-bold">Our Products</h2>
+    <div class="flex flex-col items-center justify-center py-8" id="product" >
+        <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-[#5272EE]">Our Products</h2>
         <!-- product list -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 justify-center">
             @foreach ($products as $product)
@@ -116,19 +109,23 @@
                     <!-- List -->
                     <ol class="pt-8 space-y-5 border-gray-200 my-7 dark:border-gray-700 list-decimal">
                         <li class="flex space-x-3">
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">1. Klik icon camera</span>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">1. Pilih produk kaos yang telah kamu beli</span>
                         </li>
                         <li class="flex space-x-3">
 
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">2. Arahkan camera pada design kaos</span>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">2. Klik tombol "View in Ar"</span>
                         </li>
                         <li class="flex space-x-3">
 
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">3. 3d model akan muncul </span>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">3. Arahkan kamera pada gambar kecil di kiri bawah kaos</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">4. Klik icon panah untuk melihat penjelasan lebih detail </span>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">4. Model 3d dan voice over deskripsi akan muncul</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">5.  Klik "Learn More" untuk melihat deskripsi lebih lengkap</span>
                         </li>
                     </ol>
                 </div>
@@ -147,10 +144,9 @@
                     <div class="flex flex-wrap justify-center text-center mb-10">
                         <div class="w-full lg:w-6/12 px-4">
                             <!-- Header -->
-                            <h1 class="text-gray-900 text-4xl font-bold mb-3">
+                            <h1 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-[#5272EE]">
                                 Proculture Team
                             </h1>
-
                         </div>
                     </div>
 
@@ -287,99 +283,70 @@
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> How does the billing work?</span>
+                            <span> Apa itu augmented reality?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">Springerdata offers a variety of
-                            billing options, including monthly and annual subscription plans, as well as pay-as-you-go
-                            pricing for certain services. Payment is typically made through a credit card or other
-                            secure online payment method.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600 text-justify">Augmented Reality atau AR  adalah teknologi yang memperoleh penggabungan secara real-time terhadap digital konten yang dibuat oleh komputer dengan dunia nyata.
+                            Augmented Reality dapat membuat pengguna melihat objek maya 2D atau 3D yang diproyeksikan terhadap dunia nyata.
                         </p>
                     </details>
                 </div>
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> Can I get a refund for my subscription?</span>
+                            <span> Bahan apa yang digunakan untuk kaos?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">We offer a 30-day money-back
-                            guarantee for most of its subscription plans. If you are not satisfied with your
-                            subscription within the first 30 days, you can request a full refund. Refunds for
-                            subscriptions that have been active for longer than 30 days may be considered on a
-                            case-by-case basis.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">Produk Proculture menyediakan bahan kain cotton combed 24s dan 20s.
                         </p>
                     </details>
                 </div>
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> How do I cancel my subscription?</span>
+                            <span> Jenis sablon yang digunakan?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">To cancel your subscription, you can
-                            log in to your account and navigate to the subscription management page. From there, you
-                            should be able to cancel your subscription and stop future billing.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">Sablon yang digunakan adalah sablon dengan metode DTF (Digital Transfer Film).
                         </p>
                     </details>
                 </div>
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> Is there a free trial?</span>
+                            <span> Dapat memesan lewat apa saja?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">We offer a free trial of our software
-                            for a limited time. During the trial period, you will have access to a limited set of
-                            features and functionality, but you will not be charged.
-                        </p>
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">Produk Proculture dapat dipesan melalui Shopee, Tokopedia, Instagram dan Whatsapp.                        </p>
                     </details>
                 </div>
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> How do I contact support?</span>
+                            <span> Apakah fitur augmented reality Proculture membutuhkan aplikasi tambahan?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">If you need help with our platform or
-                            have any other questions, you can contact the company's support team by submitting a support
-                            request through the website or by emailing support@ourwebsite.com.
-                        </p>
-                    </details>
-                </div>
-                <div class="py-5">
-                    <details class="group">
-                        <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> Do you offer any discounts or promotions?</span>
-                            <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                        </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">We may offer discounts or promotions
-                            from time to time. To stay up-to-date on the latest deals and special offers, you can sign
-                            up for the company's newsletter or follow it on social media.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">Fitur Augmented Reality pada produk Proculture tidak membutuhkan aplikasi tambahan, cukup buka website proculture.store untuk menggunakan fitur tersebut.
                         </p>
                     </details>
                 </div>
