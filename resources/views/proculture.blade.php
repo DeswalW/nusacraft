@@ -21,7 +21,7 @@
 <body>
     <!-- Home Section Start -->
     <header class="fixed z-10 w-full mt-0 bg-white ">
-        <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl mx-auto   md:items-center md:justify-between md:flex-row">
+        <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl mx-auto md:items-center md:justify-between md:flex-row">
             <div class="p-4 flex flex-row items-center justify-between">
                 <a href="#" class="flex items-center">
                     <img src="/logo.png" class="h-6 mr-3 sm:h-9" alt="Proculture Logo" />
@@ -34,17 +34,17 @@
                 </button>
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-start md:flex-row">
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Home</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Product</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">How it works</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Team</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">FAQ</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#home">Home</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#product">Product</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#how">How it works</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#team">Team</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-slate-400  md:mt-0 text-[#5272EE] lg:ml-4  focus:text-gray-900  focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#faq">FAQ</a>
             </nav>
-            <div :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-                <a href="javascript:void(0)" class="inline-flex items-center justify-center rounded-full border border-blue-700 bg-primary px-7 py-3 text-center text-base font-medium text-blue-500 hover:border-[#1B44C8] hover:bg-[#1B44C8] active:border-[#1B44C8] active:bg-[#1B44C8] disabled:bg-gray-3 disabled:text-dark-5 mr-8">
+            <div :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row px-5 gap-4">
+                <a href="javascript:void(0)" class="inline-flex items-center justify-center w-full rounded-full border border-blue-700 bg-primary py-3 text-center text-base font-medium text-blue-500 hover:border-[#1B44C8] hover:bg-[#1B44C8] active:border-[#1B44C8] active:bg-[#1B44C8] disabled:bg-gray-3 disabled:text-dark-5 mr-8">
                     Login
                 </a>
-                <a href="javascript:void(0)" class="px-2 py-3 md:inline-flex items-center justify-center rounded-full border border-blue-700 bg-[#5272EE] px-7 py-3 text-center text-base font-medium text-white hover:border-[#1B44C8] hover:bg-[#1B44C8] active:border-[#1B44C8] active:bg-[#1B44C8] disabled:bg-gray-3 disabled:text-dark-5">
+                <a href="javascript:void(0)" class=" md:inline-flex items-center justify-center w-full py-3 rounded-full border border-blue-700 bg-[#5272EE] text-center text-base font-medium text-white hover:border-[#1B44C8] hover:bg-[#1B44C8] active:border-[#1B44C8] active:bg-[#1B44C8] disabled:bg-gray-3 disabled:text-dark-5">
                     Sign Up
                 </a>
             </div>
@@ -52,7 +52,7 @@
 
     </header>
     <!-- Start block -->
-    <section class="bg-white dark:bg-[#E9EEFF] pt-20">
+    <section class="bg-white dark:bg-[#E9EEFF] " id="home">
         <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28 ">
             <div class="mr-auto place-self-center lg:col-span-7">
                 <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-7xl dark:text-[#5272EE]">PROCULTURE</h1>
@@ -64,7 +64,6 @@
                         </span>
                         Try Now
                     </a>
-
                 </div>
             </div>
             <div class="mt-0 lg:col-span-5 lg:flex">
@@ -73,51 +72,67 @@
         </div>
     </section>
     <!-- End block -->
-    <!-- Start block -->
-    <section class="bg-gray-50 dark:bg-white">
-        <div class="max-w-screen-xl px-4 py-4 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6" id="Product">
-            <!-- Row -->
-            <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
-                <div class="text-gray-500 sm:text-lg dark:text-gray-400">
-                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-[#5272EE]">Proculture T-Shirt Design</h2>
-                    <h1 class="text-4xl dark:text-[#5272EE]">BARONG</h1>
-                    <p class="text-base ">Desain topeng barong kebudayaan khas Bali <br> yang dikemas dengan desain yang modern.</p>
-                    <!-- List -->
-                    <br>
-                    <a href="javascript:void(0)" class="inline-flex items-center justify-center rounded-full border border-blue-700 bg-[#5272EE] px-20 py-2 text-center text-base font-medium text-white hover:border-[#1B44C8] hover:bg-[#1B44C8] active:border-[#1B44C8] active:bg-[#1B44C8] disabled:bg-gray-3 disabled:text-dark-5">
-                        Buy Now
+    <!-- Product Start -->
+    <!-- source: https://github.com/mfg888/Responsive-Tailwind-CSS-Grid/blob/main/index.html -->
+    <div class="flex flex-col items-center justify-center py-8">
+        <h2 class="text-2xl font-bold">Our Products</h2>
+        <!-- product list -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 justify-center">
+            @foreach ($products as $product)
+            <!-- with image -->
+            <div class="shadow-lg">
+                <a href="{{ route('ar.show', $product) }}" class="flex flex-col overflow-hidden gap-2 duration-200 group">
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="h-64 w-full object-cover bg-gray-200 group-hover:bg-gray-300 duration-200">
+                    <div class="bg-white p-4 flex flex-col gap-2">
+                        <h3 class="text-xl font-bold">{{ $product->name }}</h3>
+                        <p class="text-gray-500">{{ strlen($product->description) > 100 ? substr($product->description, 0, 100) . '...' : $product->description }}</p>
+                        <div class="text-blue-600 flex justify-center gap-1 group-hover:gap-2 duration-200 py-2 px-4 rounded group-hover:text-white group-hover:bg-blue-600">
+                            View in AR
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                            </svg>
+                        </div>
+                    <a href="{{ route('ar.detail', $product) }}" class="text-gray-500 flex justify-center gap-1 group-hover:gap-2 duration-200 py-2 px-4 rounded border-2 border-gray-500/0 hover:border-gray-500 hover:border-2">
+                        View Details
                     </a>
                 </div>
-                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="/barong.png" alt="dashboard feature image">
+                </a>
             </div>
-            <!-- Row -->
-
+            @endforeach
         </div>
-    </section>
-    <section class="bg-white dark:bg-[#E9EEFF]">
+    </div>
+
+    <!-- Product End -->
+
+  
+    <section class="bg-white dark:bg-[#E9EEFF]" id="how">
         <div class="items-center max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-24 lg:px-6">
             <div class="col-span-2 mb-8">
                 <img src="/ar.png" alt="Proculture Ar">
             </div>
-            <div class="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
+            <div class="col-span-2 space-y-8 md:grid  md:gap-12 md:space-y-0">
                 <div class="text-gray-500 sm:text-lg dark:text-gray-400">
                     <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-[#5272EE]">Augmented Reality Fiture</h2>
                     <!-- List -->
-                    <ol class="pt-8 space-y-5 border-gray-200 my-7 dark:border-gray-700">
+                    <ol class="pt-8 space-y-5 border-gray-200 my-7 dark:border-gray-700 list-decimal">
                         <li class="flex space-x-3">
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">1. Klik icon camera</span>
+                            <span class="text-base w-full font-medium leading-tight text-gray-900 dark:text-[#5272EE]">1.Pilih produk kaos yang sudah kamu beli</span>
                         </li>
                         <li class="flex space-x-3">
 
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">2. Arahkan camera pada design kaos</span>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">2. Klik tombol "View in Ar"</span>
                         </li>
                         <li class="flex space-x-3">
 
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">3. 3d model akan muncul </span>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">3. Arahkan kamera pada gambar kecil di kiri bawah kaos </span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">4. Klik icon panah untuk melihat penjelasan lebih detail </span>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">4. Model 3d dan voice over deskripsi akan muncul </span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-[#5272EE]">5. Klik "Learn More" untuk melihat deskripsi lebih lengkap </span>
                         </li>
                     </ol>
                 </div>
@@ -127,16 +142,16 @@
     <!-- End block -->
 
     <!-- ====== Cards Section Start -->
-    <div class="flex items-center justify-center min-h-screen bg-white py-20">
+    <div class="flex items-center justify-center min-h-screen bg-white py-10" id="team">
         <div class="flex flex-col">
             <div class="flex flex-col mt-8">
                 <!-- Meet the Team -->
                 <div class="container max-w-7xl px-4">
                     <!-- Section Header -->
-                    <div class="flex flex-wrap justify-center text-center mb-24">
+                    <div class="flex flex-wrap justify-center text-center mb-10">
                         <div class="w-full lg:w-6/12 px-4">
                             <!-- Header -->
-                            <h1 class="text-gray-900 text-4xl font-bold mb-8">
+                            <h1 class="text-gray-900 text-4xl font-bold mb-3">
                                 Proculture Team
                             </h1>
 
@@ -146,7 +161,7 @@
                     <!-- Team Members -->
                     <div class="flex flex-wrap">
                         <!-- Member #1 -->
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div class="w-full md:w-6/12 lg:w-1/5  mb-6 px-6 sm:px-6 lg:px-4">
                             <div class="flex flex-col">
                                 <!-- Avatar -->
                                 <a href="#" class="mx-auto">
@@ -169,7 +184,7 @@
                         </div>
 
                         <!-- Member #2 -->
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div class="w-full md:w-6/12 lg:w-1/5  mb-6 px-6 sm:px-6 lg:px-4">
                             <div class="flex flex-col">
                                 <!-- Avatar -->
                                 <a href="#" class="mx-auto">
@@ -192,7 +207,7 @@
                         </div>
 
                         <!-- Member #3 -->
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div class="w-full md:w-6/12 lg:w-1/5  mb-6 px-6 sm:px-6 lg:px-4">
                             <div class="flex flex-col">
                                 <!-- Avatar -->
                                 <a href="#" class="mx-auto">
@@ -215,7 +230,7 @@
                         </div>
 
                         <!-- Member #4 -->
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div class="w-full md:w-6/12 lg:w-1/5  mb-6 px-6 sm:px-6 lg:px-4">
                             <div class="flex flex-col">
                                 <!-- Avatar -->
                                 <a href="#" class="mx-auto">
@@ -237,20 +252,19 @@
                             </div>
                         </div>
                         <!-- Member #5 -->
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div class="w-full md:w-6/12 lg:w-1/5 mb-6 px-6 sm:px-6 lg:px-4">
                             <div class="flex flex-col">
                                 <!-- Avatar -->
                                 <a href="#" class="mx-auto">
-                                    <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100" src="/Silva.png">
+                                    <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100" src="/Fitri.png">
                                 </a>
 
                                 <!-- Details -->
                                 <div class="text-center mt-6">
                                     <!-- Name -->
                                     <h1 class="text-gray-900 text-xl font-bold mb-1">
-                                        Safira Silvayani
+                                        Fitri Maulidiyah
                                     </h1>
-
                                     <!-- Title -->
                                     <div class="text-gray-700 font-light mb-2">
                                         Chief Marketing Officer
@@ -265,7 +279,7 @@
     </div>
     <!-- ====== Cards Section End -->
     <!-- Faq Start -->
-    <div class="relative w-full bg-white px-6 pt-10 pb-8 mt-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10">
+    <div class="relative w-full bg-white px-6 pt-10 pb-8 mt-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10" id="faq">
         <div class="mx-auto px-5">
             <div class="flex flex-col items-center">
                 <h2 class="mt-5 text-center text-3xl font-bold tracking-tight md:text-5xl">FAQ</h2>
@@ -277,99 +291,74 @@
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> How does the billing work?</span>
+                            <span> Apa itu augmented reality?   </span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">Springerdata offers a variety of
-                            billing options, including monthly and annual subscription plans, as well as pay-as-you-go
-                            pricing for certain services. Payment is typically made through a credit card or other
-                            secure online payment method.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600 text-justify">Augmented Reality atau AR  adalah teknologi yang memperoleh penggabungan secara real-time terhadap digital konten yang dibuat oleh komputer dengan dunia nyata.
+                             Augmented Reality dapat membuat pengguna melihat objek maya 2D atau 3D yang diproyeksikan terhadap dunia nyata.
+
                         </p>
                     </details>
                 </div>
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> Can I get a refund for my subscription?</span>
+                            <span> Bahan apa yang digunakan untuk kaos?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">We offer a 30-day money-back
-                            guarantee for most of its subscription plans. If you are not satisfied with your
-                            subscription within the first 30 days, you can request a full refund. Refunds for
-                            subscriptions that have been active for longer than 30 days may be considered on a
-                            case-by-case basis.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">Produk Proculture menyediakan bahan kain cotton combed 24s dan 20s
+
                         </p>
                     </details>
                 </div>
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> How do I cancel my subscription?</span>
+                            <span>Jenis sablon yang digunakan?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">To cancel your subscription, you can
-                            log in to your account and navigate to the subscription management page. From there, you
-                            should be able to cancel your subscription and stop future billing.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">Sablon yang digunakan adalah sablon dengan metode DTF (Digital Transfer Film)
+
                         </p>
                     </details>
                 </div>
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> Is there a free trial?</span>
+                            <span> Dapat memesan lewat apa saja?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">We offer a free trial of our software
-                            for a limited time. During the trial period, you will have access to a limited set of
-                            features and functionality, but you will not be charged.
-                        </p>
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600"> Produk Proculture dapat dipesan melalui Shopee, Tokopedia, Instagram dan Whatsapp
+
                     </details>
                 </div>
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> How do I contact support?</span>
+                            <span> Apakah membutuhkan aplikasi tambahan?</span>
                             <span class="transition group-open:rotate-180">
                                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
                                 </svg>
                             </span>
                         </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">If you need help with our platform or
-                            have any other questions, you can contact the company's support team by submitting a support
-                            request through the website or by emailing support@ourwebsite.com.
-                        </p>
-                    </details>
-                </div>
-                <div class="py-5">
-                    <details class="group">
-                        <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                            <span> Do you offer any discounts or promotions?</span>
-                            <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                        </summary>
-                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600">We may offer discounts or promotions
-                            from time to time. To stay up-to-date on the latest deals and special offers, you can sign
-                            up for the company's newsletter or follow it on social media.
+                        <p class="group-open:animate-fadeIn mt-3 text-neutral-600 text-justify">Fitur Augmented Reality pada produk Proculture tidak membutuhkan aplikasi tambahan, cukup buka website proculture.store untuk menggunakan fitur tersebut
                         </p>
                     </details>
                 </div>
