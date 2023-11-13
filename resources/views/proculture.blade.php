@@ -94,7 +94,7 @@
             </div>
             <div class="col-span-2 space-y-8 md:grid  md:gap-12 md:space-y-0">
                 <div class="text-gray-500 sm:text-lg dark:text-gray-400">
-                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-[#5272EE]">Augmented Reality Fiture</h2>
+                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-[#5272EE]">Augmented Reality Fitur</h2>
                     <!-- List -->
                     <ol class="pt-8 space-y-5 border-gray-200 my-7 dark:border-gray-700 list-decimal">
                         <li class="flex space-x-3">
@@ -261,7 +261,7 @@
     <div class="relative w-full bg-white px-6 pt-10 pb-8 my-4 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10" id="faq">
         <div class="mx-auto px-5">
             <div class="flex flex-col items-center">
-                <h2 class="mt-5 text-center text-3xl font-bold tracking-tight md:text-5xl">FAQ</h2>
+                <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-[#5272EE]">FAQ</h2>
                 <p class="mt-3 text-lg text-neutral-500 md:text-xl">Frequenty asked questions
 
                 </p>
