@@ -59,7 +59,7 @@
     <!-- End block -->
     <!-- Product Start -->
     <!-- source: https://github.com/mfg888/Responsive-Tailwind-CSS-Grid/blob/main/index.html -->
-    <div class="flex mx-auto flex-col items-center justify-center py-8" id="product" >
+    <div class="flex mx-auto flex-col items-center justify-center px-4 py-8" id="product" >
         <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-[#5272EE]">Our Products</h2>
         <!-- product list -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 justify-center">
@@ -71,13 +71,13 @@
                     <div class="bg-white p-4 flex flex-col gap-2">
                         <h3 class="text-xl font-bold">{{ $product->name }}</h3>
                         <p class="text-gray-500">{{ strlen($product->description) > 100 ? substr($product->description, 0, 100) . '...' : $product->description }}</p>
-                        <div class="text-blue-600 flex justify-center gap-1 group-hover:gap-2 duration-200 py-2 px-4 rounded group-hover:text-white group-hover:bg-blue-600">
+                        <div class="absolute text-blue-600 flex justify-center gap-1 group-hover:gap-2 duration-200 py-2 px-4 rounded group-hover:text-white group-hover:bg-blue-600">
                             View in AR
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                             </svg>
                         </div>
-                </div>
+                   </div>
                 </a>
             </div>
             @endforeach
