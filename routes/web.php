@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ARController::class, 'index'])->name('proculture');
+Route::get('/', [ARController::class, 'index'])->name('nusacraft');
+Route::get('/produk', [ARController::class, 'beli'])->name('detailproduct');
 
 Route::get('/ar/{product:slug}', [ARController::class, 'show'])->name('ar.show');
 Route::get('/ar/detail/{product:slug}', [ARController::class, 'detail'])->name('ar.detail');
