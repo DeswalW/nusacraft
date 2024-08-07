@@ -13,7 +13,7 @@
         @foreach ($products as $product)
         <!-- with image -->
         <li class="w-full flex justify-center items-center">
-            <a href="{{ route('ar.show', $product) }}" class="flex justify-center items-center">
+            <a href="{{ route('ar.mindar', $product) }}" class="flex justify-center items-center">
                 <button class="bg-[#284067] rounded-full p-[16px] absolute bottom-8 shadow-2xl shadow-[#284067]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path d="M3.33337 14.9999V11.6666C3.33337 6.66659 6.66671 3.33325 11.6667 3.33325H28.3334C33.3334 3.33325 36.6667 6.66659 36.6667 11.6666V14.9999M3.33337 24.9999V28.3333C3.33337 33.3333 6.66671 36.6666 11.6667 36.6666H28.3334C33.3334 36.6666 36.6667 33.3333 36.6667 28.3333V24.9999" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
